@@ -6,6 +6,8 @@ import org.pnm.support.BasePage;
 
 public class TestStoreLoginPage extends BasePage {
 
+    public String baseUrl;
+
     public TestStoreLoginPage(WebDriver driver) {
         super(driver);
         super.baseUrl
