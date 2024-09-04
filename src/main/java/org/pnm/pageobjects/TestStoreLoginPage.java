@@ -2,31 +2,42 @@ package org.pnm.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.pnm.support.BasePage;
 
 public class TestStoreLoginPage extends BasePage {
 
-    public String baseUrl;
-
     public TestStoreLoginPage(WebDriver driver) {
-        super(driver);
-        super.baseUrl
+        this.driver = driver;
     }
 
     public By signInLink = By.cssSelector(".user-info span");
-    By email = By.id("field-email");
-    By password = By.id("field-password");
+    By emailInput = By.id("field-email");
+    By passwordInput = By.id("field-password");
     By loginButton = By.id("submit-login");
 
+    public WebElement getEmailInput() {
+        return driver.findElement(emailInput);
+    }
+
+    public WebElement getPasswordInput() {
+        return driver.findElement(passwordInput);
+    }
+
+    public WebElement getLoginButton() {
+        return driver.findElement(loginButton);
+    }
+
+
     public void login(String email, String password) {
-        driver.findElement(this.email).sendKeys(email);
-        driver.findElement(this.password).sendKeys(password);
-        driver.findElement(this.loginButton).click();
+        driver.findElement(emailInput).sendKeys(email);
+        driver.findElement(passwordInput).sendKeys(password);
+        driver.findElement(loginButton).click();
     }
 
     public boolean isLoginPageDisplayed() {
-        return driver.findElement(email).isDisplayed() &&
-                driver.findElement(password).isDisplayed() &&
+        return driver.findElement(emailInput).isDisplayed() &&
+                driver.findElement(passwordInput).isDisplayed() &&
                 driver.findElement(loginButton).isDisplayed();
     }
 

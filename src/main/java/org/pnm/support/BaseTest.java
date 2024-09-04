@@ -33,7 +33,7 @@ public class BaseTest {
 
     public Verifications verify = new Verifications();
 
-    public BaseTest() {
+   /* public BaseTest() {
         prop = new Properties();
         try {
             fis = new FileInputStream("src/main/resources/config.properties");
@@ -45,7 +45,7 @@ public class BaseTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
     WebDriver choseDriver() {
         if (prop.getProperty("browser").equals("chrome")) {

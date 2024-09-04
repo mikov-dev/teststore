@@ -12,12 +12,15 @@ public class BasePage {
     public String baseUrl;
     private Properties prop;
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-        prop = readPropertiesFile("src/main/resources/settings.properties");
-        baseUrl = prop.getProperty("baseUrl");
+    public String getTestStoreUrl() {
+        prop = readPropertiesFile("src/main/resources/config.properties");
+        return prop.getProperty("baseUrl");
     }
 
+    public String getHomepageUrl() {
+        prop = readPropertiesFile("src/main/resources/config.properties");
+        return prop.getProperty("homepageUrl");
+    }
 
     public Properties readPropertiesFile(String fileName) {
         try {
