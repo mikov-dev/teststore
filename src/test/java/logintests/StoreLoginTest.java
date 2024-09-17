@@ -13,7 +13,7 @@ public class StoreLoginTest extends BaseTest {
     @BeforeClass
     public void setUp() {
        setUpWithChrome();
-       //loginPage = new TestStoreLoginPage(driver);
+       loginPage = new TestStoreLoginPage(driver);
        driver.get(loginPage.getTestStoreUrl());
     }
 
