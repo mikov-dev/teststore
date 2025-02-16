@@ -2,6 +2,7 @@ package homepage;
 
 import org.pnm.pageobjects.Homepage;
 import org.pnm.support.BaseTest;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -19,6 +20,11 @@ public class HomepageTest extends BaseTest {
     @Test
     public void testHomepage() {
         homepage.getToggle().click();
+    }
+
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
     }
 
 }

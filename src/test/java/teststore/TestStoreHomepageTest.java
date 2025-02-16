@@ -3,6 +3,7 @@ package teststore;
 import org.openqa.selenium.WebElement;
 import org.pnm.pageobjects.TestStoreHomePage;
 import org.pnm.support.BaseTest;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -47,9 +48,9 @@ public class TestStoreHomepageTest extends BaseTest {
         verify.elementIsDisplayed(testStoreHomePage.getHomeHeader());
     }
 
-//    @AfterClass
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
+    }
 
 }
