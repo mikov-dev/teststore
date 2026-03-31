@@ -7,6 +7,8 @@ import org.pnm.support.BasePage;
 
 public class Homepage extends BasePage {
 
+    //Just some comment
+
     By toggle = By.cssSelector(".toggle");
     By homepageLink = By.linkText("HOMEPAGE");
     By accordionLink = By.linkText("ACCORDION");
